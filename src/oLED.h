@@ -46,8 +46,8 @@
 #define OLED_RST 16								// Reset pin (Some OLED displays do not have it)
 
 #elif _PIN_OUT==5								// TTGO with external OLED
-#define OLED_SCL 22								// GPIO22 / SCL
-#define OLED_SDA 21								// GPIO21 / SDA
+#define OLED_SCL 15								// GPIO22 / SCL
+#define OLED_SDA 4								// GPIO21 / SDA
 #define OLED_RST 16								// Reset pin (Some OLED displays do not have it)
 
 #endif
