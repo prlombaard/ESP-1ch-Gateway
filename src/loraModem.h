@@ -278,16 +278,16 @@ struct pins {
 // RST  == GPIO14/ PIN14
 struct pins {
 	uint8_t dio0=26;		// GPIO26 / Dio0 used for one frequency and one SF
-	uint8_t dio1=35;		// GPIO35 / Used for CAD, may or not be shared with DIO0
-	uint8_t dio2=34;		// GPIO34 / Used for frequency hopping, don't care
-	uint8_t ss=18;			// GPIO18 / Dx. Select pin connected to GPIO18
-	uint8_t rst=14;			// GPIO0 / D3. Reset pin not used	
+	uint8_t dio1=26;		// GPIO35 / Used for CAD, may or not be shared with DIO0
+	uint8_t dio2=26;		// GPIO34 / Used for frequency hopping, don't care
+	uint8_t ss=5;			// GPIO18 / Dx. Select pin connected to GPIO18
+	uint8_t rst=22;			// GPIO0 / D3. Reset pin not used	
 } pins;
-#define SCK 5				// Check
+#define SCK 18				// Check
 #define MISO 19				// Check
-#define MOSI 27				// Check
-#define RST 14				// Check
-#define SS 18
+#define MOSI 23				// Check
+#define RST 22				// Check
+#define SS 5
 
 
 #else
@@ -297,6 +297,19 @@ struct pins {
 // MOSI 13 / D7
 // CLK  14 / D5
 // SS   16 / D0
+struct pins {
+	uint8_t dio0=26;		// GPIO26 / Dio0 used for one frequency and one SF
+	uint8_t dio1=26;		// GPIO35 / Used for CAD, may or not be shared with DIO0
+	uint8_t dio2=26;		// GPIO34 / Used for frequency hopping, don't care
+	uint8_t ss=5;			// GPIO18 / Dx. Select pin connected to GPIO18
+	uint8_t rst=22;			// GPIO0 / D3. Reset pin not used	
+} pins;
+#define SCK 18				// Check
+#define MISO 19				// Check
+#define MOSI 23				// Check
+#define RST 22				// Check
+#define SS 5
+
 #error "Pin Definitions _PIN_OUT must be defined in loraModem.h"
 #endif
 
