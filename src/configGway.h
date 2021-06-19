@@ -117,7 +117,7 @@
 // the webserver and it will be stored in SPIFF
 // NOTE: The frequency is set in the loraModem.h file and is default 868100000 Hz.
 #if !defined _SPREADING
-#	define _SPREADING SF9
+#	define _SPREADING SF7
 #endif
 
 // Channel Activity Detection
@@ -152,7 +152,7 @@
 // the firmware on your router witout having to be really close to the gateway and 
 // connect with USB.
 #if !defined _OTA
-#	define _OTA 1
+#	define _OTA 0
 #endif
 
 
@@ -167,7 +167,7 @@
 //	4: ESP32, Heltec and TTGO pin out (should work for Heltec, 433 and Oled too).
 //	5: Other, define your own in loraModem.h (does not include GPS Code)
 #if !defined _PIN_OUT
-#	define _PIN_OUT 1
+#	define _PIN_OUT 5
 #endif
 
 
@@ -259,13 +259,13 @@
 // 1: _LOCALSERVER is used for received messages
 // 2: Also transmittes messages are encoded
 #if !defined _LOCALSERVER
-#	define _LOCALSERVER 1					// See server definitions for decodes
+#	define _LOCALSERVER 0					// See server definitions for decodes
 #endif
 
 
 // ntp
 // Please add daylight saving time to NTP_TIMEZONES when desired
-#define NTP_TIMESERVER "nl.pool.ntp.org"	// Country and region specific
+#define NTP_TIMESERVER "za.pool.ntp.org"	// Country and region specific
 #define NTP_TIMEZONES	2					// How far is our Timezone from UTC (excl daylight saving/summer time)
 #define SECS_IN_HOUR	3600
 #define NTP_INTR 0							// Do NTP processing with interrupts or in loop();
@@ -361,6 +361,6 @@
 // and need no changing. When _REPEATER function is selected, we do not
 // use the backend function to send message to server over MQTT.
 #if _REPEATER==0
-#	define _TTNSERVER "router.eu.thethings.network"
+#	define _TTNSERVER "eu.thethings.network"
 #	define _TTNPORT 1700							// Standard port for TTN
 #endif
